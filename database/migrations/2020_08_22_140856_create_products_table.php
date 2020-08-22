@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->float('hind');
             $table->float('tootekood');
             $table->binary('tootefoto');
+            $table->string('naitajad');
             $table->string('tootja');
             $table->enum('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart']);
         });
