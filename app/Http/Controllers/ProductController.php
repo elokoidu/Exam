@@ -59,8 +59,7 @@ class ProductController extends Controller
         $product->naitajad = $request->naitajad;
         $product->tootja = $request->tootja;
         $product->kategooria = $request->kategooria;
-        error_log($product);
-        die();
+
         $product->save();
 
         Session::flash('success', 'The product was saved!');
