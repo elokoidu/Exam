@@ -22,6 +22,9 @@
             {{ Form::label('tootepilt', 'Tootepilt') }}
             {{ Form::file('tootepilt', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
+            {{ Form::label('naitajad', 'Näitajad') }}
+            {{ Form::text('naitajad', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            <hr>
             {{ Form::label('tootja', 'Tootja') }}
             {{ Form::text('tootja', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>

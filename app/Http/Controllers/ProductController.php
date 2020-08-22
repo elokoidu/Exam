@@ -46,6 +46,7 @@ class ProductController extends Controller
             'hind' => 'required',
             'tootekood' => 'required',
             'tootefoto' => 'required',
+            'naitajad' => 'naitajad',
             'tootja' => 'required',
             'kategooria' => 'required',
         ));
@@ -56,6 +57,7 @@ class ProductController extends Controller
         $product->hind = $request->hind;
         $product->tootekood = $request->tootekood;
         $product->tootefoto = $request->tootefoto;
+        $product->naitajad = $request->naitajad;
         $product->tootja = $request->tootja;
         $product->kategooria = $request->kategooria;
         error_log($product);
