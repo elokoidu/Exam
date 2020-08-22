@@ -46,7 +46,6 @@ class ProductController extends Controller
             'hind' => 'required',
             'tootekood' => 'required',
             'tootefoto' => 'required',
-            'naitajad' => 'naitajad',
             'tootja' => 'required',
             'kategooria' => 'required',
         ));
