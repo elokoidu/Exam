@@ -11,6 +11,7 @@ class Product extends Model
         'hind',
         'tootekood',
         'tootefoto',
+        'naitajad',
         'tootja',
         'kategooria'
     ];
