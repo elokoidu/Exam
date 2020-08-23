@@ -16,6 +16,9 @@
 </div>
 <div class="uk-margin-large-left uk-margin-medium-bottom">
     {!! Html::linkRoute('products.edit', 'Muuda', array($product->id), array('class' => 'uk-button uk-button-primary')) !!}
-    {!! Html::linkRoute('products.destroy', 'Kustuta', array($product->id), array('class' => 'uk-button uk-button-danger')) !!}
+
+    {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'DELETE']) !!}
+    {!! Form::submit('Kustuta', ['class' => 'uk-button uk-button-danger']) !!}
+    {!! Form::close() !!}
 </div>
 @endsection

@@ -5605,7 +5605,7 @@ ul.uk-nav-sub {
  ========================================================================== */
 
 /*
- * Set gutter 
+ * Set gutter
  */
 
 .uk-subnav-divider {
@@ -5754,7 +5754,7 @@ ul.uk-nav-sub {
  * 3. Reset list
  */
 
-.uk-pagination {
+.pagination {
   display: flex;
   /* 1 */
   flex-wrap: wrap;
@@ -5771,7 +5771,7 @@ ul.uk-nav-sub {
  * 3. Create position context for dropdowns
  */
 
-.uk-pagination > * {
+.pagination > * {
   /* 1 */
   flex: none;
   /* 2 */
@@ -5788,7 +5788,7 @@ ul.uk-nav-sub {
  * 2. Style
  */
 
-.uk-pagination > * > * {
+.pagination > * > * {
   /* 1 */
   display: block;
   /* 2 */
@@ -5798,21 +5798,21 @@ ul.uk-nav-sub {
 
 /* Hover + Focus */
 
-.uk-pagination > * > :hover,
-.uk-pagination > * > :focus {
+.pagination > * > :hover,
+.pagination > * > :focus {
   color: #666;
   text-decoration: none;
 }
 
 /* Active */
 
-.uk-pagination > .uk-active > * {
+.pagination > .uk-active > * {
   color: #666;
 }
 
 /* Disabled */
 
-.uk-pagination > .uk-disabled > * {
+.pagination > .uk-disabled > * {
   color: #999;
 }
 
