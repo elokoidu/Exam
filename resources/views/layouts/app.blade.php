@@ -76,7 +76,7 @@
             </div>
         </nav>
     </div>
-    <div class="uk-background-primary uk-dark uk-visible@l">
+    <div class="uk-background-primary uk-dark uk-visible@l" uk-sticky>
         <nav class="uk-navbar-container uk-margin uk-margin-remove-bottom uk-text-bold uk-text-secondary"
              uk-navbar="dropbar: true;">
             <div class="uk-navbar-left uk-margin-large-left">
@@ -201,6 +201,7 @@
         </div>
     </div>
 </footer>
+<a href="#" uk-totop uk-scroll uk-sticky class="uk-align-right"></a>
 </div>
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
