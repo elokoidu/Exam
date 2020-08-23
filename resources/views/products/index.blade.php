@@ -8,7 +8,7 @@
     <a href="{{ route('products.create') }}"><button class="uk-button uk-button-primary">Lisa uus toode</button></a>
 </div>
     <div class="uk-visible@l uk-margin-medium-top">
-        <table class="uk-table uk-margin-large-left uk-margin-small-right">
+        <table class="uk-table uk-margin-large-left uk-width-1-1 uk-margin-small-right">
             <thead>
                 <th>#</th>
                 <th>Nimi</th>
@@ -38,6 +38,9 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="uk-pagination uk-flex uk-flex-center uk-text-large uk-margin-medium-top">
+            {!! $products->render(); !!}
+        </div>
     </div>
 <div class="uk-hidden@l uk-visible@m uk-width-1-1 uk-margin-medium-left">
     <table class="uk-table">
@@ -58,6 +61,9 @@
         @endforeach
         </tbody>
     </table>
+    <div class="uk-pagination uk-flex uk-flex-center uk-text-large uk-margin-medium-top">
+        {!! $products->render(); !!}
+    </div>
 </div>
 <div class="uk-hidden@m uk-width-1-1 uk-margin-medium-left">
     <table class="uk-table">
@@ -77,5 +83,8 @@
         @endforeach
         </tbody>
     </table>
+    <div class="uk-pagination uk-flex uk-flex-center uk-text-small uk-margin-medium-top">
+        {!! $products->render(); !!}
+    </div>
 </div>
 @endsection
