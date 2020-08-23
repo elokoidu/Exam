@@ -16,10 +16,10 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('nimi');
-            $table->float('hind');
+            $table->integer('hind');
             $table->bigInteger('tootekood');
             $table->binary('tootefoto');
-            $table->string('näitajad');
+            $table->longText('näitajad');
             $table->string('tootja');
             $table->enum('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart']);
         });
