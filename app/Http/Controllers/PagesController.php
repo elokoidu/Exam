@@ -14,7 +14,7 @@ class PagesController extends Controller {
         return view::make('pages.product', ['products' => $products]);
     }
     public function getDetail() {
-        $products = Product::first();
+        $products = Product::first()->paginate(18)->get();
         return view::make('pages.detail', ['products' => $products]);
     }
 }

@@ -170,7 +170,7 @@
 
 @include('partials._messages')
 
-<footer class="uk-section uk-section-xsmall uk-section-secondary">
+<footer class="uk-section uk-section-xsmall uk-section-secondary uk-margin-medium-top">
     <div class="uk-container">
         <div class="uk-grid uk-text-center uk-text-left@s uk-flex-middle" data-uk-grid>
             <div class="uk-text-small uk-text-muted uk-width-1-3@s">
@@ -201,7 +201,6 @@
         </div>
     </div>
 </footer>
-<a href="#" uk-totop uk-scroll uk-sticky class="uk-align-right"></a>
 </div>
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>

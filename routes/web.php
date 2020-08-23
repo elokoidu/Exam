@@ -17,7 +17,7 @@ Route::get('detail', 'PagesController@getDetail');
 Route::get('home', 'PagesController@getIndex');
 Route::get('/', 'PagesController@getIndex');
 Route::resource('products', 'ProductController');
-Route::get('products/{slug}', ['as' => 'pages.detail', 'uses' => 'ItemController@getDetail']);
+Route::get('products/{slug}', ['as' => 'product.detail', 'uses' => 'ItemController@getDetail']);
 
 Auth::routes();
 Route::get('auth/login', 'Auth\AuthController@getLogin');

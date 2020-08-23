@@ -12,10 +12,10 @@
         </li>
     </ul>
     <div class="uk-overlay uk-position-cover uk-overlay-primary uk-hidden@m">
-        <h4 class="uk-position-center" id="hero">Oma ala proffesionaalid</h4>
+        <h4 class="uk-position-center" id="hero">Oma ala parimad!</h4>
     </div>
     <div class="uk-overlay uk-position-cover uk-overlay-primary uk-visible@m">
-        <h1 class="uk-position-center" id="hero">Oma ala proffesionaalid</h1>
+        <h1 class="uk-position-center" id="hero">Oma ala parimad!</h1>
     </div>
     <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
     <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
