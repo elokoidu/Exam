@@ -11,12 +11,9 @@
         <tr><td><strong>Näitajad: </strong>{{ $product->näitajad }}</td></tr>
         <tr><td><strong>Tootja: </strong>{{ $product->tootja }}</td></tr>
         <tr><td><strong>Kategooria: </strong>{{ $product->kategooria }}</td></tr>
+        <tr><td><strong>Slug: </strong><a href="{{ $product->slug }}">{{ $product->slug }}</a></td></tr>
         </tbody>
     </table>
-</div>
-<div>
-    <dt>URL</dt>
-    <dd><a href="{{ url($product->slug) }}">{{url($product->slug)}}</a></dd>
 </div>
 <div class="uk-margin-large-left uk-flex uk-margin-medium-bottom">
     <div class="uk-margin-small-right">{!! Html::linkRoute('products.edit', 'Muuda', array($product->id), array('class' => 'uk-button uk-button-primary')) !!}</div>
