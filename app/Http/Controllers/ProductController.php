@@ -48,8 +48,10 @@ class ProductController extends Controller
             'hind' => 'required',
             'tootekood' => 'required',
             'tootefoto' => 'required',
+            'näitajad' => 'required',
             'tootja' => 'required',
             'kategooria' => 'required',
+            'kirjeldus' => 'required',
             'slug' => 'required',
         ));
 
@@ -62,11 +64,10 @@ class ProductController extends Controller
         $product->näitajad = $request->näitajad;
         $product->tootja = $request->tootja;
         $product->kategooria = $request->kategooria;
+        $product->kirjeldus = $request->kirjeldus;
         $product->slug = $request->slug;
 
         $product->save();
-
-        Session::flash('success', 'The product was saved!');
 
         return redirect()->route('products.show', $product->id);
 

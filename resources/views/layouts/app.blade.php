@@ -17,11 +17,11 @@
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li class="uk-parent">
-                            <a href="/products">Tooted</a>
+                            <a href="">Tooted</a>
                             <ul class="uk-nav-sub">
                                 <li><a href="#">Tootjad</a></li>
                                 <li><a href="#">Kategooriad</a></li>
-                                <li><a href="/product">Kõik tooted</a></li>
+                                <li><a href="#">Kõik tooted</a></li>
                             </ul>
                         </li>
                         <li class="uk-nav-divider"></li>
@@ -45,6 +45,7 @@
                             <a href="#">Konto</a>
                             <ul class="uk-nav-sub">
                                 @auth
+                                    <li><a href="/products">Tooted</a></li>
                                     <li><a href="/logout">Logi Välja</a></li></a>
                                 @endauth
                                 @guest
@@ -85,12 +86,12 @@
                         <ul class="uk-navbar-nav">
                             <li><a href="/">Avaleht</a></li>
                             <li>
-                                <a href="/products">Tooted</a>
+                                <a href="">Tooted</a>
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav uk-margin-remove-top">
                                         <li><a href="#">Tootjad</a></li>
                                         <li><a href="#">Kategooriad</a></li>
-                                        <li><a href="/product">Kõik tooted</a></li>
+                                        <li><a href="#">Kõik tooted</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -139,6 +140,7 @@
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         @auth
+                                            <li><a href="/products">Tooted</a></li>
                                             <li><a href="/logout">Logi Välja</a></li></a>
                                         @endauth
                                         @guest

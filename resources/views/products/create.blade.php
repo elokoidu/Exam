@@ -9,6 +9,15 @@
         <h2 class="">Lisa uus toode</h2>
         <hr>
         <div class="uk-margin-medium-top">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         {{ Form::open(array('route' => 'products.store', 'files' => 'true','method' => 'post', 'class' => 'uk-form-controls-text uk-form-width-large')) }}
             {{ Form::label('nimi', 'Nimi') }}
             {{ Form::text('nimi', null, array('class' => 'uk-margin-small-top uk-input')) }}
@@ -19,12 +28,12 @@
             {{ Form::label('tootekood', 'Tootekood') }}
             {{ Form::number('tootekood', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
-            {{ Form::label('tootepilt', 'Tootepilt') }}
-            {{ Form::file('tootepilt', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            {{ Form::label('tootefoto', 'Tootefoto') }}
+            {{ Form::url('tootefoto', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
-            {{ Form::label('naitajad', 'Näitajad') }}
-            {{ Form::text('naitajad', null, array('class' => 'uk-margin-small-top uk-input')) }}
-            <hr>
+            {{ Form::label('näitajad', 'Näitajad') }}
+            {{ Form::text('näitajad', null, array('class' => 'uk-margin-small-top uk-input')) }}
+        <hr>
             {{ Form::label('tootja', 'Tootja') }}
             {{ Form::text('tootja', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
@@ -32,11 +41,11 @@
             {{ Form::select('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart'], array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
             {{ Form::label('kirjeldus', 'kirjeldus') }}
-            {{ Form::select('kirjeldus', null, array('class' => 'uk-margin-small-top uk-input')) }}
-            <hr>
+            {{ Form::text('kirjeldus', null, array('class' => 'uk-margin-small-top uk-input')) }}
+        <hr>
             {{ Form::label('slug', 'Slug') }}
             {{ Form::text('slug', null, array('class' => 'uk-margin-small-top uk-input')) }}
-            <hr>
+        <hr>
             {{ Form::submit('Lisa uus toode', array('class' => 'uk-button uk-button-default uk-margin-medium-bottom')) }}
         {{ Form::close() }}
     </div>

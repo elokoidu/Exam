@@ -3,7 +3,7 @@
         <div
             class="uk-card uk-card-small uk-card-default uk-align-center uk-margin-large-top uk-width-medium uk-card-hover uk-text-center">
             <div class="uk-card-media-top uk-card-header">
-                <a href="{{ url('products/'.$product->slug) }}"><img src="{{ $product->tootefoto }}" alt="Image"></a>
+                <a href="/detail"><img src="{{ $product->tootefoto }}" alt="Image"></a>
                 <button class="uk-button uk-button-primary uk-card-badge"><a href="#" uk-icon="icon: cart"></a></button>
             </div>
             <div class="uk-card uk-card-body">
