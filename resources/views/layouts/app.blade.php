@@ -17,7 +17,7 @@
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li class="uk-parent">
-                            <a href="/product">Tooted</a>
+                            <a href="/products">Tooted</a>
                             <ul class="uk-nav-sub">
                                 <li><a href="#">Tootjad</a></li>
                                 <li><a href="#">Kategooriad</a></li>
@@ -85,7 +85,7 @@
                         <ul class="uk-navbar-nav">
                             <li><a href="/">Avaleht</a></li>
                             <li>
-                                <a href="/product">Tooted</a>
+                                <a href="/products">Tooted</a>
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav uk-margin-remove-top">
                                         <li><a href="#">Tootjad</a></li>

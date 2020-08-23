@@ -31,8 +31,8 @@
                     <td>{{ substr($product->näitajad, 0, 40) }} {{ strlen($product->näitajad) > 40 ? '...' : '' }}</td>
                     <td>{{ $product->tootja }}</td>
                     <td>{{ $product->kategooria }}</td>
-                    <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-default uk-button-small">Vaata</a>
-                        <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-default uk-button-small">Muuda</a>
+                    <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
+                        <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                     </td>
                 </tr>
                 @endforeach
@@ -51,8 +51,8 @@
                 <td>{{ $product->id }}</td>
                 <td>{{ substr($product->nimi, 0, 15) }}</td>
                 <td>{{ substr($product->näitajad, 0, 30) }} {{ strlen($product->näitajad) > 30 ? '...' : '' }}</td>
-                <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-default uk-button-small">Vaata</a>
-                    <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-default uk-button-small">Muuda</a>
+                <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
+                    <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                 </td>
             </tr>
         @endforeach
@@ -70,8 +70,8 @@
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ substr($product->nimi, 0, 25) }}</td>
-                <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-default uk-button-small">Vaata</a>
-                    <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-default uk-button-small">Muuda</a>
+                <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
+                    <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                 </td>
             </tr>
         @endforeach

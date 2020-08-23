@@ -103,7 +103,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'tootekood' => 'required',
+            'tootefoto' => 'required',
+            'tootja' => 'required',
+            'kategooria' => 'required',
+        ));
+        $product = Product::find($id);
+
+        $product->tootekood = $request->input('tootekood');
+        $product->tootefoto = $request->input('tootefoto');
+        $product->näitajad = $request->input('näitajad');
+        $product->tootja = $request->input('tootja');
+        $product->kategooria = $request->input('kategooria');
+
+        $product->save();
+
+        return redirect()->route('products.show', $product->id);
     }
 
     /**
