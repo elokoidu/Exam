@@ -2,5 +2,5 @@
 @section('title', '| Avaleht')
 @section('content')
     @include('layouts.hero')
-    @include('layouts.things')
+    @include('partials._item')
 @endsection

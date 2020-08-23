@@ -36,7 +36,7 @@
                         <input class="uk-checkbox" type="checkbox" name="remember"
                                id="remember" {{ old('remember') ? 'checked' : '' }}>
                         <label for="remember">
-                            {{ __('Remember Me') }}
+                            {{ __('Jäta mind meelde') }}
                         </label>
                     </div>
                 </div>

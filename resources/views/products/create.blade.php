@@ -9,7 +9,7 @@
         <h2 class="">Lisa uus toode</h2>
         <hr>
         <div class="uk-margin-medium-top">
-        {{ Form::open(array('route' => 'products.store', 'files' => 'true', 'class' => 'uk-form-controls-text uk-form-width-large')) }}
+        {{ Form::open(array('route' => 'products.store', 'files' => 'true','method' => 'post', 'class' => 'uk-form-controls-text uk-form-width-large')) }}
             {{ Form::label('nimi', 'Nimi') }}
             {{ Form::text('nimi', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>

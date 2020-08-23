@@ -132,6 +132,9 @@
                                 </div>
                             </div>
                             <li>
+                                <a href="#" uk-icon="icon: cart"></a>
+                            </li>
+                            <li>
                                 <a href="#">Konto</a>
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
