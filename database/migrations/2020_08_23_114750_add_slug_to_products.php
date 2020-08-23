@@ -14,7 +14,7 @@ class AddSlugToProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('slug');
+            $table->string('slug')->unique()->after('kategooria');
         });
     }
 
@@ -26,7 +26,7 @@ class AddSlugToProducts extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropColumn('slug');
         });
     }
 }

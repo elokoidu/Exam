@@ -50,6 +50,7 @@ class ProductController extends Controller
             'tootefoto' => 'required',
             'tootja' => 'required',
             'kategooria' => 'required',
+            'slug' => 'required|alpha_dash',
         ));
 
         $product = new Product;
@@ -61,6 +62,7 @@ class ProductController extends Controller
         $product->naitajad = $request->naitajad;
         $product->tootja = $request->tootja;
         $product->kategooria = $request->kategooria;
+        $product->slug = $request->slug;
 
         $product->save();
 
