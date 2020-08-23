@@ -14,11 +14,13 @@
         </tbody>
     </table>
 </div>
-<div class="uk-margin-large-left uk-margin-medium-bottom">
-    {!! Html::linkRoute('products.edit', 'Muuda', array($product->id), array('class' => 'uk-button uk-button-primary')) !!}
+<div class="uk-margin-large-left uk-flex uk-margin-medium-bottom">
+    <div class="uk-margin-small-right">{!! Html::linkRoute('products.edit', 'Muuda', array($product->id), array('class' => 'uk-button uk-button-primary')) !!}</div>
 
-    {!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'DELETE']) !!}
+
+    <div class="uk-margin-small-right">{!! Form::open(['route' => ['products.destroy', $product->id], 'method' => 'DELETE']) !!}
     {!! Form::submit('Kustuta', ['class' => 'uk-button uk-button-danger']) !!}
-    {!! Form::close() !!}
+        {!! Form::close() !!}</div>
+    <div class="uk-margin-small-right">{!! Html::linkRoute('products.index', 'Tagasi toodete juurde', array($product->id), array('class' => 'uk-button uk-button-primary')) !!}</div>
 </div>
 @endsection
