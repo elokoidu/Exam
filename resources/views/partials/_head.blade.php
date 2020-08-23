@@ -10,5 +10,6 @@
     <title>MM @yield('title')</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="public/custom/app.less" />
 </head>

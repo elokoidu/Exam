@@ -1,0 +1,12 @@
+@import "node_modules/uikit/src/less/uikit.theme.less";
+
+@button-height: 15px;
+@button-primary-color: @bg;
+
+@bg: black;
+@bg-light: boolean(luma(@bg) > 50%);
+
+.uk-button-primary {
+    background: @bg;
+    color: if(@bg-light, black, white);
+}
