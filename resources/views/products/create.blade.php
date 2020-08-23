@@ -31,6 +31,9 @@
             {{ Form::label('kategooria', 'Kategooria') }}
             {{ Form::select('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart'], array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
+            {{ Form::label('kirjeldus', 'kirjeldus') }}
+            {{ Form::select('kirjeldus', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            <hr>
             {{ Form::label('slug', 'Slug') }}
             {{ Form::text('slug', null, array('class' => 'uk-margin-small-top uk-input')) }}
             <hr>

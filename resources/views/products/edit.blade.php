@@ -12,6 +12,7 @@
             <tr><td><strong>Näitajad: </strong>{{ Form::textarea('näitajad', null, ['class' => 'form-control']) }}</td></tr>
             <tr><td><strong>Tootja: </strong>{{ Form::text('tootja', null, ['class' => 'form-control']) }}</td></tr>
             <tr><td><strong>Kategooria: </strong>{{ Form::select('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart'], ['class' => 'form-control']) }}</td></tr>
+            <tr><td><strong>Kirjeldus: </strong>{{ Form::text('Kirjeldus', null, ['class' => 'form-control']) }}</td></tr>
             </tbody>
         </table>
 </div>

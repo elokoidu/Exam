@@ -6,7 +6,8 @@
             <div class="uk-card uk-card-default uk-card-body">@include('partials._img')</div>
         </div>
         <div>
-            <div class="uk-card uk-card-default uk-card-body">@include('partials._text')</div>
+            <div class="uk-card uk-card-default uk-card-body uk-margin-small-bottom">@include('partials._text')</div>
+            <div class="uk-card uk-card-default uk-card-body">@include('partials._buy')</div>
         </div>
     </div>
 @endsection

@@ -18,6 +18,7 @@
                 <th>Näitajad</th>
                 <th>Tootja</th>
                 <th>Kategooria</th>
+                <th>Kirjeldus</th>
                 <th></th>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                     <td>{{ substr($product->näitajad, 0, 40) }} {{ strlen($product->näitajad) > 40 ? '...' : '' }}</td>
                     <td>{{ $product->tootja }}</td>
                     <td>{{ $product->kategooria }}</td>
+                    <td>{{ substr($product->kirjeldus, 0, 25 )}}{{ strlen($product->kirjeldus) > 25 ? '...' : '' }}</td>
                     <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
                         <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                     </td>

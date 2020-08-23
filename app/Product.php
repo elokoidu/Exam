@@ -14,7 +14,9 @@ class Product extends Model
         'tootefoto',
         'naitajad',
         'tootja',
-        'kategooria'
+        'kategooria',
+        'kirjeldus',
+        'slug'
     ];
 
 }

@@ -11,7 +11,7 @@ class PagesController extends Controller {
         return view('pages.welcome')->withProducts($product);
     }
     public function getProduct() {
-        return view('pages.product');
+        return view::make('pages.product', ['products' => $products]);
     }
     public function getDetail() {
         $products = Product::first();

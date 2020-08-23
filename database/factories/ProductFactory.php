@@ -14,6 +14,7 @@ $factory->define(\App\Product::class, function (Faker $faker) {
         'näitajad' => $faker->sentence(25),
         'tootja' => $faker->company,
         'kategooria' => $faker->randomElement(['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart']),
+        'kirjeldus' => $faker->sentence(50),
         'slug' => $faker->slug,
     ];
 });

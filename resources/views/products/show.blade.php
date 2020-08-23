@@ -11,6 +11,7 @@
         <tr><td><strong>Näitajad: </strong>{{ $product->näitajad }}</td></tr>
         <tr><td><strong>Tootja: </strong>{{ $product->tootja }}</td></tr>
         <tr><td><strong>Kategooria: </strong>{{ $product->kategooria }}</td></tr>
+        <tr><td><strong>Kirjeldus: </strong>{{ $product->kirjeldus }}</td></tr>
         <tr><td><strong>Slug: </strong><a href="{{ $product->slug }}">{{ $product->slug }}</a></td></tr>
         </tbody>
     </table>

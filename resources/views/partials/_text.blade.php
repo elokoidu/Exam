@@ -1,4 +1,5 @@
 <div class="uk-align-center">
-    <h1>Monitor 1 {{ $products->nimi }}</h1>
-    <h2>Hind {{ $products->hind }}</h2>
+    <h1><strong>{{ $products->nimi }}</strong></h1>
+    <h2><strong>Hind</strong> {{ $products->hind }}€</h2>
+    <p>{{ $products->näitajad }}</p>
 </div>

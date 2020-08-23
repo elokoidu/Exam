@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->longText('näitajad');
             $table->string('tootja');
             $table->enum('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart']);
+            $table->longText('kirjeldus');
         });
     }
 

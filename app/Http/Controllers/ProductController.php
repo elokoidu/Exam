@@ -110,6 +110,7 @@ class ProductController extends Controller
             'tootefoto' => 'required',
             'tootja' => 'required',
             'kategooria' => 'required',
+            'kirjeldus' => 'required',
         ));
         $product = Product::find($id);
 
@@ -118,6 +119,7 @@ class ProductController extends Controller
         $product->näitajad = $request->input('näitajad');
         $product->tootja = $request->input('tootja');
         $product->kategooria = $request->input('kategooria');
+        $product->kirjeldus = $request->input('kirjeldus');
 
         $product->save();
 
