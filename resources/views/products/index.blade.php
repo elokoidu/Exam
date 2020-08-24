@@ -18,21 +18,19 @@
                 <th>Näitajad</th>
                 <th>Tootja</th>
                 <th>Kategooria</th>
-                <th>Kirjeldus</th>
                 <th></th>
             </thead>
             <tbody>
                 @foreach($products as $product)
                 <tr>
                     <td>{{ $product->id }}</td>
-                    <td>{{ $product->nimi }}</td>
-                    <td>{{ $product->hind }}</td>
-                    <td>{{ $product->tootekood }}</td>
-                    <td>{{ substr($product->tootefoto, 0, 20) }} {{ strlen($product->tootefoto) > 20 ? '...' : '' }}</td>
-                    <td>{{ substr($product->näitajad, 0, 40) }} {{ strlen($product->näitajad) > 40 ? '...' : '' }}</td>
-                    <td>{{ $product->tootja }}</td>
-                    <td>{{ $product->kategooria }}</td>
-                    <td>{{ substr($product->kirjeldus, 0, 25 )}}{{ strlen($product->kirjeldus) > 25 ? '...' : '' }}</td>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td>{{ $product->code }}</td>
+                    <td>{{ $product->image }}</td>
+                    <td>{{ substr($product->details, 0, 40) }} {{ strlen($product->details) > 40 ? '...' : '' }}</td>
+                    <td>{{ $product->manufacturer }}</td>
+                    <td>{{ $product->category }}</td>
                     <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
                         <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                     </td>
@@ -54,8 +52,8 @@
         @foreach($products as $product)
             <tr>
                 <td>{{ $product->id }}</td>
-                <td>{{ substr($product->nimi, 0, 15) }}</td>
-                <td>{{ substr($product->näitajad, 0, 30) }} {{ strlen($product->näitajad) > 30 ? '...' : '' }}</td>
+                <td>{{ substr($product->name, 0, 15) }}</td>
+                <td>{{ substr($product->details, 0, 30) }} {{ strlen($product->details) > 30 ? '...' : '' }}</td>
                 <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
                     <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                 </td>
@@ -77,7 +75,7 @@
         @foreach($products as $product)
             <tr>
                 <td>{{ $product->id }}</td>
-                <td>{{ substr($product->nimi, 0, 25) }}</td>
+                <td>{{ substr($product->name, 0, 25) }}</td>
                 <td><a href="{{ route('products.show', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Vaata</a>
                     <a href="{{ route('products.edit', $product->id) }}" class="uk-button uk-button-primary uk-button-small">Muuda</a>
                 </td>

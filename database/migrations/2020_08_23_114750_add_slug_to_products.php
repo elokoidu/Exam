@@ -14,7 +14,7 @@ class AddSlugToProducts extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->string('slug')->unique()->after('kategooria');
+            $table->string('slug')->unique()->after('category');
         });
     }
 

@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Product;
-use MongoDB\Driver\Session;
 
 class ProductController extends Controller
 {
-    public function _construct() {
-        $this->middleware('auth');
-}
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('id', 'desc')->paginate(20);
-        return view('products.index')->withProducts($products);
+      $products = Product::orderBy('id', 'desc')->paginate(20);
+      return view('products.index')->withProducts($products);
     }
 
     /**
@@ -37,51 +31,59 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Validation\ValidationException
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $this->validate($request, array(
-            'nimi' => 'required',
-            'hind' => 'required',
-            'tootekood' => 'required',
-            'tootefoto' => 'required',
-            'näitajad' => 'required',
-            'tootja' => 'required',
-            'kategooria' => 'required',
-            'kirjeldus' => 'required',
-            'slug' => 'required',
+        $validatedData = $this->validate($request, array(
+            'name' => 'bail|required|unique:products,name|max:255',
+            'price' => 'required|numeric',
+            'code' => 'required|numeric|unique:products,code',
+            'details' => 'required|max:255',
+            'manufacturer' => 'required|max:255',
+            'slug' => 'required|max:25|unique:products,slug|unique:products,id',
+            'image' => 'nullable|mimes:jpeg,jpg,png|max:1024',
+            'category' => 'integer|between:0,' . (count(config('enums.categories')) - 1),
         ));
 
         $product = new Product;
 
-        $product->nimi = $request->nimi;
-        $product->hind = $request->hind;
-        $product->tootekood = $request->tootekood;
-        $product->tootefoto = $request->tootefoto;
-        $product->näitajad = $request->näitajad;
-        $product->tootja = $request->tootja;
-        $product->kategooria = $request->kategooria;
-        $product->kirjeldus = $request->kirjeldus;
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->code = $request->code;
+        $product->details = $request->details;
+        $product->manufacturer = $request->manufacturer;
+        $product->category = config('enums.categories')[$request->category];
         $product->slug = $request->slug;
 
         $product->save();
 
-        return redirect()->route('products.show', $product->id);
+        if ($request->image) {
+          $extension = $request->image->extension();
+          $path = $product->id . '.' . $extension;
+          $request->image->storeAs('upload', $path, 'public');
+          $product->image = $path;
+          $product->save();
+        }
 
+        // Session::flash('success', 'The product was saved!');
+
+        return redirect()->route('products.show', $product->id);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $product = Product::find($id);
+
+        if (!$product) $product = Product::firstWhere('slug', $id);
+
         return view('products.show')->withProduct($product);
     }
 
@@ -106,23 +108,33 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, array(
-            'tootekood' => 'required',
-            'tootefoto' => 'required',
-            'tootja' => 'required',
-            'kategooria' => 'required',
-            'kirjeldus' => 'required',
-        ));
         $product = Product::find($id);
+        $rules = [
+          'details' => 'required|max:255',
+          'manufacturer' => 'required|max:255',
+          'image' => 'nullable|mimes:jpeg,jpg,png|max:1024'
+        ];
 
-        $product->tootekood = $request->input('tootekood');
-        $product->tootefoto = $request->input('tootefoto');
-        $product->näitajad = $request->input('näitajad');
-        $product->tootja = $request->input('tootja');
-        $product->kategooria = $request->input('kategooria');
-        $product->kirjeldus = $request->input('kirjeldus');
+        if ($product->code != $request->code) $rules['code'] = 'required|numeric|unique:products,code';
+        if ($product->category != $request->category) $rules['category'] = 'integer|between:0,' . (count(config('enums.categories')) - 1);
+
+        $validatedData = $this->validate($request, $rules);
+
+        if ($product->code != $request->code) $product->code = $request->code;
+        if ($product->details != $request->details) $product->details = $request->details;
+        if ($product->manufacturer != $request->manufacturer) $product->manufacturer = $request->manufacturer;
+        if ($product->category != $request->category) $product->category = config('enums.categories')[$request->category];
+
+        if ($request->image) {
+          $extension = $request->image->extension();
+          $path = $product->id . '.' . $extension;
+          $request->image->storeAs('upload', $path, 'public');
+          $product->image = $path;
+        }
 
         $product->save();
+
+        // Session::flash('success', 'The product was saved!');
 
         return redirect()->route('products.show', $product->id);
     }

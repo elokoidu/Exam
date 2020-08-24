@@ -9,43 +9,40 @@
         <h2 class="">Lisa uus toode</h2>
         <hr>
         <div class="uk-margin-medium-top">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+          @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+          @endif
         {{ Form::open(array('route' => 'products.store', 'files' => 'true','method' => 'post', 'class' => 'uk-form-controls-text uk-form-width-large')) }}
-            {{ Form::label('nimi', 'Nimi') }}
-            {{ Form::text('nimi', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            {{ Form::label('name', 'Nimi') }}
+            {{ Form::text('name', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
-            {{ Form::label('hind', 'Hind') }}
-            {{ Form::number('hind', null, array('class' => 'uk-margin-small-top uk-input', 'step'=>'0.1', 'min' => '0')) }}
+            {{ Form::label('price', 'Hind') }}
+            {{ Form::number('price', null, array('class' => 'uk-margin-small-top uk-input', 'step'=>'0.1', 'min' => '0')) }}
         <hr>
-            {{ Form::label('tootekood', 'Tootekood') }}
-            {{ Form::number('tootekood', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            {{ Form::label('code', 'Tootekood') }}
+            {{ Form::number('code', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
-            {{ Form::label('tootefoto', 'Tootefoto') }}
-            {{ Form::url('tootefoto', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            {{ Form::label('image', 'Tootepilt') }}
+            {{ Form::file('image', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
-            {{ Form::label('näitajad', 'Näitajad') }}
-            {{ Form::text('näitajad', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            {{ Form::label('details', 'Näitajad') }}
+            {{ Form::text('details', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            <hr>
+            {{ Form::label('manufacturer', 'Tootja') }}
+            {{ Form::text('manufacturer', null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
-            {{ Form::label('tootja', 'Tootja') }}
-            {{ Form::text('tootja', null, array('class' => 'uk-margin-small-top uk-input')) }}
-        <hr>
-            {{ Form::label('kategooria', 'Kategooria') }}
-            {{ Form::select('kategooria', ['Monitor', 'Lisatarvikud', 'Emaplaat', 'Kõvaketas', 'Graafikakaart'], array('class' => 'uk-margin-small-top uk-input')) }}
-        <hr>
-            {{ Form::label('kirjeldus', 'kirjeldus') }}
-            {{ Form::text('kirjeldus', null, array('class' => 'uk-margin-small-top uk-input')) }}
+            {{ Form::label('category', 'Kategooria') }}
+            {{ Form::select('category', config('enums.categories'), null, array('class' => 'uk-margin-small-top uk-input')) }}
         <hr>
             {{ Form::label('slug', 'Slug') }}
             {{ Form::text('slug', null, array('class' => 'uk-margin-small-top uk-input')) }}
-        <hr>
+            <hr>
             {{ Form::submit('Lisa uus toode', array('class' => 'uk-button uk-button-default uk-margin-medium-bottom')) }}
         {{ Form::close() }}
     </div>
@@ -54,4 +51,3 @@
 @section('scripts')
 {!! Html::script('js/parsley.min.js') !!}
 @endsection
-

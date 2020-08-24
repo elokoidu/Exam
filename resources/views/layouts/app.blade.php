@@ -17,7 +17,7 @@
                         </li>
                         <li class="uk-nav-divider"></li>
                         <li class="uk-parent">
-                            <a href="">Tooted</a>
+                            <a href="#">Tooted</a>
                             <ul class="uk-nav-sub">
                                 <li><a href="#">Tootjad</a></li>
                                 <li><a href="#">Kategooriad</a></li>
@@ -45,13 +45,10 @@
                             <a href="#">Konto</a>
                             <ul class="uk-nav-sub">
                                 @auth
-                                    <li><a href="/products">Tooted</a></li>
-                                    <li><a href="/logout">Logi Välja</a></li></a>
+                                    @if (Auth::user()->role === 'admin')
+                                        <li><a href="/products">Tooted</a></li>
+                                    @endif
                                 @endauth
-                                @guest
-                                    <li><a href="/login">Logi sisse</a></li>
-                                    <li><a href="/register">Registreeru</a></li>
-                                @endguest
                             </ul>
                         </li>
                         <li class="uk-nav-divider"></li>
@@ -86,12 +83,12 @@
                         <ul class="uk-navbar-nav">
                             <li><a href="/">Avaleht</a></li>
                             <li>
-                                <a href="">Tooted</a>
+                                <a href="#">Tooted</a>
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav uk-margin-remove-top">
                                         <li><a href="#">Tootjad</a></li>
                                         <li><a href="#">Kategooriad</a></li>
-                                        <li><a href="#">Kõik tooted</a></li>
+                                        <li><a href="/products">Kõik tooted</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -140,7 +137,11 @@
                                 <div class="uk-navbar-dropdown">
                                     <ul class="uk-nav uk-navbar-dropdown-nav">
                                         @auth
-                                            <li><a href="/products">Tooted</a></li>
+                                            @auth
+                                                @if (Auth::user()->role === 'admin')
+                                                    <li><a href="/products">Tooted</a></li>
+                                                @endif
+                                            @endauth
                                             <li><a href="/logout">Logi Välja</a></li></a>
                                         @endauth
                                         @guest
@@ -172,7 +173,7 @@
 
 @include('partials._messages')
 
-<footer class="uk-section uk-section-xsmall uk-section-secondary uk-margin-medium-top">
+<footer class="uk-section uk-section-xsmall uk-section-secondary">
     <div class="uk-container">
         <div class="uk-grid uk-text-center uk-text-left@s uk-flex-middle" data-uk-grid>
             <div class="uk-text-small uk-text-muted uk-width-1-3@s">
@@ -203,6 +204,7 @@
         </div>
     </div>
 </footer>
+<a href="#" uk-totop uk-scroll uk-sticky class="uk-align-right"></a>
 </div>
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
