@@ -19,7 +19,7 @@ class PagesController extends Controller {
         return view('pages.product');
     }
     public function getDetail() {
-        $products = Product::first();
-        return view::make('pages.detail', ['products' => $products]);
+        $product = Product::first();
+        return view::make('products.detail', ['products' => $product]);
     }
 }

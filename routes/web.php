@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['middlware' => ['web']], function () {
+    Route::get('home', 'PagesController@getIndex');
+    Route::get('detail', 'PagesController@getDetail');
+    Route::get('product', 'PagesController@getProduct');
   Auth::routes();
   Route::get('auth/login', 'Auth\AuthController@getLogin');
   Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -21,9 +24,7 @@ Route::group(['middlware' => ['web']], function () {
   Route::get('auth/register', 'Auth\RegisterController@getRegister');
   Route::post('auth/register', 'Auth\RegisterController@postRegister');
 
-  Route::get('home', 'PagesController@getIndex');
-  Route::get('detail', 'PagesController@getDetail');
-  Route::get('product', 'PagesController@getProduct');
+
 
   Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::resource('products', 'ProductController');
