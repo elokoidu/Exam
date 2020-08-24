@@ -1,4 +1,4 @@
-<div class="uk-align-center uk-margin-large-left uk-margin-large-right">
-    <p>{{ $products->kirjeldus }}</p>
+<div class="uk-align-center uk-width-1-2">
+    <p>{{ $products->details }}</p>
     <button class="uk-button-primary uk-button-large">Lisa ostukorvi</button>
 </div>
